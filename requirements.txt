@@ -1,0 +1,2 @@
+# Runtime dependencies (exact versions; see README).
+tzdata==2026.5

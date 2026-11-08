@@ -1,0 +1,7 @@
+{
+  "lesson": 4,
+  "test_imports": ["selection_core", "baseline", "baseline.tasks"],
+  "spec": false,
+  "decision_log": false,
+  "upstream": "https://github.com/SCHOOL-ORG/course-starter.git"
+}

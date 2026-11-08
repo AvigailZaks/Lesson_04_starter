@@ -1,0 +1,24 @@
+[
+  {
+    "id": "evt_100",
+    "title": "חתונה בחיפה",
+    "client_id": "cli_100",
+    "lead_provider_id": "prv_100",
+    "enabled_services": ["add_to_album"],
+    "galleries": [
+      {"id": "gal_100", "title": "טקס", "media": ["med_1", "med_2", "med_3"]}
+    ],
+    "selections": []
+  },
+  {
+    "id": "evt_200",
+    "title": "Bar Mitzvah in Tel Aviv",
+    "client_id": "cli_200",
+    "lead_provider_id": "prv_100",
+    "enabled_services": ["add_to_album", "print_10x15"],
+    "galleries": [
+      {"id": "gal_200", "title": "Party", "media": ["med_9"]}
+    ],
+    "selections": []
+  }
+]

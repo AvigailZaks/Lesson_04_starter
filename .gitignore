@@ -5,3 +5,4 @@ __pycache__/
 var/
 *.sqlite3
 .env
+desktop.ini

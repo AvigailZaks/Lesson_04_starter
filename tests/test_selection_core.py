@@ -49,4 +49,13 @@ def test_rejected_selection_does_not_modify_event(sample_event):
     assert event1 == sample_event
     assert err.value.code == "DUPLICATE_MEDIA"
 
+
+@pytest.mark.req("REQ-SEL-06")
+def test_only_event_client_can_submit_selection(sample_event):
+    with pytest.raises(selection_core.SelectionError) as err:
+        selection_core.submit_selection(
+            sample_event, "cli_200", ["med_1"], ["add_to_album"])
+
+    assert err.value.code == "FORBIDDEN"
+
     

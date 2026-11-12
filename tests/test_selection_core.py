@@ -2,7 +2,7 @@
 import pytest
 
 import selection_core
-
+import copy
 
 @pytest.mark.req("REQ-SEL-01")
 def test_valid_selection_is_returned(sample_event):
@@ -38,3 +38,15 @@ def test_duplicate_media_is_rejected(sample_event):
             sample_event, "cli_100", ["med_1", "med_1"], ["add_to_album"])
 
     assert err.value.code == "DUPLICATE_MEDIA"
+
+
+@pytest.mark.req("REQ-SEL-04")
+def test_rejected_selection_does_not_modify_event(sample_event):
+    event1 =copy.deepcopy(sample_event)
+    with pytest.raises(selection_core.SelectionError) as err:
+        selection_core.submit_selection(
+            sample_event, "cli_100", ["med_1", "med_1"], ["add_to_album"])
+    assert event1 == sample_event
+    assert err.value.code == "DUPLICATE_MEDIA"
+
+    
